@@ -6,8 +6,9 @@ Notes :
 -Supports negative fractions as well.
 -Initially and after any operation the fraction is reduced to it's lowest terms.
 -Supports (+,-,*,/,>=,<=,<,>,==) operators.
--Supports taking fraction as input using standard input in one of the following formats :
+-Supports taking fraction as input using standard input (e.g. cin) in one of the following formats :
 "(X)" or "X" or "(X/Y)" or "X/Y" or even "(X/Y" if you forgot the closing brace :D.
+-Supports outputing the fraction using standard output (e.g. cout).
 */
 #include <bits/stdc++.h>
 using namespace std;
