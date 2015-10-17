@@ -70,7 +70,7 @@ int LCM(int x,int y){
 }
 Rational::Rational(int x = 0,int y = 1){
 	if (y == 0)
-		throw std::overflow_error("The Dominator can't be a zero!");
+		throw overflow_error("The Dominator can't be a zero!");
 	a = x;
 	b = y;
 	reduce();
@@ -115,7 +115,8 @@ Rational SolveLinear(){ //takes input in format rX"sign"r=r where r = rational n
 	Rational r1,r2,r3;
 	char c,C;
 	cin >> r1 >> c >> C >> r2 >> c >> r3;
-	r2 = r2 * (-1*(C == '-'));
+	if (C == '-')
+		r2 = r2 * -1;
 	return (r3-r2)/r1;
 }
 Rational SolveLinear(Rational r1,Rational r2,Rational r3){ //solves linear equation with given parameters.
@@ -146,7 +147,7 @@ Rational operator *(const Rational& r1,const Rational& r2){
 }
 Rational operator /(const Rational& r1,const Rational& r2){
 	if (r2.a == 0)
-		throw std::overflow_error("Can't divide by zero!");
+		throw overflow_error("Can't divide by zero!");
 	int NM,D;
 	NM = r1.a * r2.b;
 	D = r1.b * r2.a;
